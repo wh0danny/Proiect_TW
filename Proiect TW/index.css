@@ -1,0 +1,216 @@
+/* Stilurile pentru Topbar */
+.topbar {
+    background-color: rgb(21, 21, 21);/* Culoarea de fundal a barei de sus */
+    color: rgb(255, 255, 255);/* Culoarea textului din bara de sus */
+    height: 20px;/* Inaltimea barei de sus */
+    display: flex;/* Elementele din interirorul clasei topbar sunt aranjate pe orizontala(flex) */
+    justify-content: center;/* Alinierea continutului din interiorul clasei topbar pe centrul orizontalei */
+    align-items: center;/* Alinierea continutului din interiorul clasei topbar pe centrul vertical */
+  }
+  /* Stilurile pentru tag-ul h1 din interiorul clasei topbar */
+  .topbar h1 {
+    font-size: 20px;/* Marimea fontului */
+    margin: 0;/* Marginile sunt setate la 0 */
+  }
+  
+  .marquee {
+    display: none; /* ascundem textul pentru dispozitivele desktop */
+  }
+  /* definim stilurile pentru dispozitivele mobile folosind media query */
+  @media (max-width: 767px) {
+    /* inaltimea barei de sus se ajusteaza automat pe dispozitivele mobile */
+    .topbar {
+      height: auto;
+    }
+
+    /* ascundem titlul din bara de sus pentru dispozitivele mobile */
+    .topbar h1 {
+      display: none; /* ascundem textul pentru dispozitivele mobile */
+    }
+
+    /* afisam textul alergator pentru dispozitivele mobile */
+    .marquee {
+      display: block;
+      font-size: 16px;/* marimea fontului */
+      white-space: nowrap; /* textul va fi pe o singura linie si va fi derulat */
+      overflow: hidden;/* adaugam puncte de suspensie la finalul textului */
+      text-overflow: ellipsis; /* adaugam puncte de suspensie la finalul textului */
+      animation: marquee 10s linear infinite; /* definim animatia pentru textul alergator */
+    }
+    /*definim animatia pentru textul alergator*/
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);/*la inceput, textul va fi complet in afara ecranului la dreapta*/
+      }
+      100% {
+        transform: translateX(-100%);/*la final, textul va fi complet in afara ecranului la stanga*/
+      }
+    }
+  }
+  /* Logo-ul devine responsive */
+    .navbar-brand img {
+    max-width: 100%; 
+    max-height: 50px;
+    }
+    /* Setarile pentru sectiunea hero */
+    .hero {
+      background-image: url('Images/Fundal.jpg');/* imaginea de fundal */
+      background-size: cover;/* imaginea de fundal acopera intreaga sectiune */
+      background-position: center;/* imaginea de fundal este centrata */
+      height: 100vh;/* inaltimea sectiunii este egala cu inaltimea viewport-ului */
+      position: relative;/* sectiunea este pozitionata relativ in interiorul containerului */
+    }
+    /* Imaginea de deasupra titlului */
+    .moving-image {
+      position: absolute;/* pozitionam imaginea relativ la sectiunea parinte */
+      top: 70%;/* pozitionam imaginea la 70% din inaltimea sectiunii parinte */
+      left: 50%;/* pozitionam imaginea la jumatatea latimii sectiunii parinte */
+      transform: translate(-50%, -50%);/* centram imaginea vertical si orizontal */
+      width: 80%;/* latimea imaginii */
+      max-width: 700px;/* latimea maxima a imaginii */
+      height: auto;/* inaltimea imaginii se va ajusta automat in functie de latimea imaginii */
+    }
+    /* Stilurile pentru textul din sectiunea hero */
+    .hero h1 {
+      font-size: 4rem;/*  marimea fontului pentru titlu */
+      color: rgb(14, 156, 238);/*  culoarea fontului pentru titlu */
+      text-align: center;/* centrarea textului titlului */
+      margin-top: 3rem;/* spatiul dintre titlu si imaginea de deasupra */
+    }
+    
+    .hero p {
+      font-size: 2rem;/* marimea fontului pentru textul din sectiunea hero*/
+      color: rgb(15, 214, 225);/* // culoarea fontului pentru textul din sectiunea hero */
+      text-align: center;/* centrarea textului din sectiunea hero */
+      margin-bottom: 3rem;/* spatiul dintre textul din sectiunea hero si buton */
+    }
+    
+    .hero button {
+      display: block;/*  butonul se afiseaza ca bloc */
+      margin: 0 auto;/*  butonul este centrat orizontal */
+      padding: 1rem 2rem;/* dimensiunile padding-ului pentru buton */
+      background-color: #fff;/*  culoarea fundalului butonului */
+      border: none;/* eliminam marginile butonului */
+      border-radius: 2rem;/* adaugam colturile rotunjite pentru buton */
+      font-size: 1.5rem;/* marimea fontului pentru textul butonului */
+      color: #333;/* culoarea fontului pentru textul butonului */
+      cursor: pointer;/* cursorul devine de tip pointer cand mouse-ul se afla pe buton */
+      margin-bottom: 3rem;/*  spatiul dintre buton si textul din sectiunea hero */
+    }
+    /* Stilurile pentru sectiunea hero pentru dispozitivele mobile */
+    @media (max-width: 768px) {
+      /* Reducem inaltimea sectiunii hero */
+      .hero {
+        height: 50vh;
+      }
+    /* Schimbam dimensiunea fontului pentru titlu si marja de sus */
+      .hero h1 {
+        font-size: 2.5rem;
+        margin-top: 1rem;
+      }
+    /* Schimbam dimensiunea fontului pentru text si marja de jos */
+      .hero p {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+    /* Schimbam dimensiunea fontului si marja de jos pentru buton */
+      .hero button {
+        font-size: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      /* Modificam latimea imaginii mobile */
+      .moving-image{
+        width: 100%;
+        max-width: 200px;
+      }
+    }
+    /* Stilurile pentru sectiunea contact */
+      .contact {
+        padding: 50px 0;/*adaugam spatiu de 50 de pixeli in partea de sus si jos a sectiunii */
+      }
+      
+      .contact h2 {
+        margin-bottom: 30px; /* adaugam un spatiu de 30 de pixeli intre titlul sectiunii si continutul de sub el */
+      }
+      
+      .contact p {
+        font-size: 18px; /* marimea fontului pentru paragrafe este de 18px */
+        line-height: 1.5; /* adaugam un spatiu de 1.5 intre liniile paragrafelor */
+      }
+      
+      .contact form {
+        margin-top: 50px; /* adaugam un spatiu de 50 de pixeli intre formular si continutul de deasupra lui */
+      }
+      
+      .contact label {
+        font-size: 16px; /* marimea fontului pentru etichete este de 16px */
+        font-weight: 600; /* setam greutatea fontului ca fiind bold */
+      }
+      
+      .contact input,
+      .contact textarea {
+        padding: 12px 20px; /* adaugam spatiu de 12 pixeli in partea de sus si de jos si de 20 de pixeli in partea stanga si dreapta */
+        font-size: 16px; /* marimea fontului pentru input si textarea este de 16px */
+        line-height: 1.5; /* adaugam un spatiu de 1.5 intre liniile input-urilor si ale textarelor */
+        border: 1px solid #ced4da; /* adaugam un chenar subtire in jurul input-urilor si ale textarelor */
+        border-radius: 4px; /* adaugam o margine rotunjita in jurul input-urilor si ale textarelor */
+        margin-bottom: 20px; /* adaugam un spatiu de 20 de pixeli intre input-uri si textarea-uri */
+      }
+      
+      .contact textarea {
+        resize: vertical; /* setam textarelor sa se poata mari in inaltime */
+      }
+      
+      .contact button[type="submit"] {
+        background-color: #007bff; /* setam culoarea de fundal pentru buton */
+        color: #fff; /* setam culoarea textului pentru buton */
+        border: none; /* eliminam chenarul din jurul butonului */
+        border-radius: 4px; /* adaugam o margine rotunjita in jurul butonului */
+        padding: 12px 20px; /* adaugam spatiu de 12 pixeli in partea de sus si de jos si de 20 de pixeli in partea stanga si dreapta */
+        font-size: 16px; /* marimea fontului pentru buton este de 16px */
+        cursor: pointer; /* setam cursorul la pointer la trecerea peste buton */
+      }
+      
+      .contact button[type="submit"]:hover {
+        background-color: #0069d9; /* schimbam culoarea de fundal pentru buton atunci cand se trece cu cursorul peste el */
+      }
+
+      footer {
+  background-color: #f2f2f2; /* setează culoarea de fundal */
+  padding: 20px; /* adaugă un padding de 20px la elementul footer */
+  display: flex; /* setează modul de afișare la flex */
+  justify-content: space-between; /* poziționează elementele la marginile laterale ale containerului */
+  align-items: center; /* aliniază elementele pe axa verticală la mijlocul containerului */
+}
+
+.footer-logo img {
+  height: 50px; /* setează înălțimea imaginii */
+}
+
+.footer-menu {
+  list-style: none; /* elimină stilurile implicite ale listei */
+  margin: 0; /* elimină marginile implicite ale listei */
+  padding: 0; /* elimină padding-ul implicite al listei */
+}
+
+.footer-menu ul {
+  margin: 0; /* elimină marginile implicite ale listei */
+  padding: 0; /* elimină padding-ul implicite al listei */
+  list-style: none; /* elimină stilurile implicite ale listei */
+  font-size: 16px; /* setează dimensiunea fontului la 16px */
+}
+
+.footer-menu li {
+  display: inline-block; /* afișează elementele orizontal */
+  margin-right: 10px; /* adaugă un spațiu de 10px între elemente */
+}
+
+.footer-menu li:last-child {
+  margin-right: 0; /* elimină spațiul dintre ultimul element și elementul anterior */
+}
+
+.footer-menu ul li a {
+  color: #212529; /* setează culoarea textului */
+  text-decoration: none; /* elimină sublinierea textului */
+}
+      
